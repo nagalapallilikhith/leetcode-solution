@@ -1,14 +1,15 @@
-import java.util.Arrays;
 class Solution {
     public void moveZeroes(int[] nums) {
-        int left=0;
-        for(int right=0;right<nums.length;right++){
-            if(nums[right]!=0){
-                int temp=nums[left];
-                nums[left]=nums[right];
-                nums[right]=temp;
-                left++;
+        int i=0;
+        for(int n:nums){
+            if(n!=0){
+                nums[i]=n;
+                i++;
             }
+        }
+        while(i<nums.length){
+            nums[i]=0;
+            i++;
         }
         System.out.println(Arrays.toString(nums));
     }
